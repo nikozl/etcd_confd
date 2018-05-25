@@ -1,0 +1,8 @@
+[template]
+prefix = "/"
+src = "nginx.conf.tmpl"
+dest = "/tmp/nginx.conf"
+keys = [
+    "/spa/"
+]
+

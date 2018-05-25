@@ -1,0 +1,8 @@
+{{range gets "/spa/*"}}
+
+            location ^~ /{{base .Key}} {
+                #rewrite /{{base .Key }}/(.*) /$1 break;
+
+                proxy_pass http://{{base .Value}}/;
+            }
+{{end}}

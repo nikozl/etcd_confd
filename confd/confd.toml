@@ -1,0 +1,9 @@
+backend = "etcd"
+
+confdir = "/etc/confd"
+debug = false
+interval = 60
+nodes = ["http://172.17.0.2:2379", ]
+noop = false
+prefix = "/"
+quiet = true
