@@ -1,8 +1,7 @@
 ## Repo in progress
 
 ## Subject
-This repository contains some info that can help us to run an etcd server and confd for automatically reload our configuration files. For example, we will work with conf
-d for autoreload nginx.conf file getting data stored on our etcd server
+This repository contains some info that can help us to run an etcd server and confd for automatically reload our configuration files. For example, we will work with confdfor autoreload nginx.conf file getting data stored on our etcd server
 
 ## Get started
 
@@ -16,7 +15,9 @@ docker run -d -p 80:80 confdnginx
 
  Now we can insert key in our etcd server using curl:
 *  curl http://127.0.0.1:2379/v2/keys/spa/niko -XPUT -d value="miaplicacion:5000"
+
  Or delete it:
+
 *  curl http://127.0.0.1:2379/v2/keys/spa/miaplicacion:5000 -XDELETE
 
 *  Run confd inside our confdnginx container, and we will see that the file nginx.conf has been updated. 
