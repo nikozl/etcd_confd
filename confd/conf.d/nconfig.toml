@@ -1,7 +1,7 @@
 [template]
 prefix = "/"
 src = "nginx.conf.tmpl"
-dest = "/tmp/nginx.conf"
+dest = "/etc/nginx/sites-enabled/default"
 keys = [
     "/spa/"
 ]

@@ -8,11 +8,13 @@ RUN apt-get update -y \
     && chmod +x /opt/confd/bin/confd \
     && export PATH="$PATH:/opt/confd/bin" \
     && mkdir -p /etc/confd/conf.d \
-    && mkdir -p /etc/confd/templates
+    && mkdir -p /etc/confd/templates \
+    && mkdir -p /etc/nginx/sites-enabled
 
 #ADD confd files and templates
 ADD confd.toml /etc/confd/confd.toml 
 ADD conf.d/* /etc/confd/conf.d/
 ADD templates/* /etc/confd/templates/
+ADD nginx.conf /etc/nginx/nginx.conf
 
 CMD ["/usr/sbin/nginx","-g","daemon off;"]
