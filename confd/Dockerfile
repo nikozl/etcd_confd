@@ -16,5 +16,9 @@ ADD confd.toml /etc/confd/confd.toml
 ADD conf.d/* /etc/confd/conf.d/
 ADD templates/* /etc/confd/templates/
 ADD nginx.conf /etc/nginx/nginx.conf
+ADD run.sh /usr/local/bin/run.sh
 
-CMD ["/usr/sbin/nginx","-g","daemon off;"]
+RUN chmod +x /usr/local/bin/run.sh
+
+ENTRYPOINT ["/usr/local/bin/run.sh"]
+#CMD ["/usr/sbin/nginx","-g","daemon off;"]
